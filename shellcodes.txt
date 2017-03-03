@@ -1,0 +1,13 @@
+trap at 0x10
+sr = int
+
+Basic. One nullbyte.
+
+push 0x7F
+call INT
+30127f00b0129445
+
+Hard call:
+
+mov 0x7F11, r2
+call 0x10
