@@ -1,0 +1,2 @@
+#!/bin/bash
+r2 -i params.r2 malloc://512
