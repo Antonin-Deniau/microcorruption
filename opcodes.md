@@ -1,4 +1,5 @@
 One-operand instructions:
+=========================
 
 RRC(.B)	9-bit rotate right through carry. C->msbit->...->lsbit->C. Clear the carry bit beforehand to do a logical right shift.
 SWPB	Swap 8-bit register halves. No byte form.
@@ -9,6 +10,7 @@ CALL	Fetch operand, push PC, then assign operand value to PC. Note the immediate
 RETI	Pop SP, then pop PC. Note that because flags like CPUOFF are in the stored status register, the CPU will normally return to the low-power mode it was previously in. This can be changed by adjusting the SR value stored on the stack before invoking RETI (see below). The operand field is unused.
 
 Relative jumps:
+===============
 
 JNE/JNZ	Jump if Z==0 (if !=)
 JEQ/Z	Jump if Z==1 (if ==)
@@ -20,6 +22,7 @@ JL	Jump if N!=V (if signed <)
 JMP	Jump unconditionally
 
 Two-operand instructions:
+=========================
 
 MOV src,dest	dest = src	The status flags are NOT set.
 ADD src,dest	dest += src	 
@@ -35,6 +38,7 @@ XOR src,dest	dest ^= src
 AND src,dest	dest &=- src
 
 emulated ?:
+===========
 
 NOP	MOV r3,r3	Any register from r3 to r15 would do the same thing.
 POP dst	MOV @SP+,dst	 
@@ -56,17 +60,20 @@ DINT	BIC #8,SR
 EINT	BIC #8,SR
 
 Shift and rotate left is done with add:
+=======================================
 
 RLA(.B) dst	ADD(.B) dst,dst
 RLC(.B) dst	ADDC(.B) dst,dst
 
 Some common one-operand instructions:
+=====================================
 
 INV(.B) dst	XOR(.B) #-1,dst
 CLR(.B) dst	MOV(.B) #0,dst
 TST(.B) dst	CMP(.B) #0,dst
 
 Increment and decrement (by one or two):
+========================================
 
 DEC(.B) dst	SUB(.B) #1,dst
 DECD(.B) dst	SUB(.B) #2,dst
@@ -74,6 +81,7 @@ INC(.B) dst	ADD(.B) #1,dst
 INCD(.B) dst	ADD(.B) #2,dst
 
 Adding and subtracting only the carry bit:
+==========================================
 
 ADC(.B) dst	ADDC(.B) #0,dst
 DADC(.B) dst	DADD(.B) #0,dst
